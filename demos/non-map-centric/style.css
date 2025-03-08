@@ -46,3 +46,21 @@
 .chart-container {
   width: 100%;
 }
+
+@media (max-width: 813px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "panel-map"
+      "panel-bookmarks"
+      "panel-legend"
+      "panel-chart"
+      "panel-chart2"
+      "panel-chart3";
+  }
+
+  .grid-container calcite-panel {
+    min-height: 360px;
+  }
+}

@@ -33,15 +33,14 @@
   </head>
   <body>
     <calcite-shell>
-      <calcite-shell-panel slot="panel-start">
-        <calcite-panel>
-          <arcgis-legend id="legend"></arcgis-legend>
-        </calcite-panel>
-      </calcite-shell-panel>
       <arcgis-map item-id="ad11753a40764bd39f7ac5685dffdc21">
         <arcgis-home position="top-left"></arcgis-home>
         <arcgis-zoom position="top-left"></arcgis-zoom>
-        <arcgis-expand position="bottom-left" expanded>
+        <arcgis-expand
+          expand-icon="graph-bar"
+          position="bottom-left"
+          label="Charts"
+        >
           <arcgis-placement>
             <calcite-carousel arrow-type="none">
               <calcite-carousel-item>
@@ -77,10 +76,12 @@
             </calcite-carousel>
           </arcgis-placement>
         </arcgis-expand>
-        <arcgis-placement position="top-right"
-          ><arcgis-expand expanded>
-            <arcgis-bookmarks></arcgis-bookmarks> </arcgis-expand
-        ></arcgis-placement>
+        <arcgis-expand position="top-right" group="top-right" label="Bookmarks">
+          <arcgis-bookmarks></arcgis-bookmarks
+        ></arcgis-expand>
+        <arcgis-expand position="top-right" group="top-right" label="Legend">
+          <arcgis-legend id="legend"></arcgis-legend>
+        </arcgis-expand>
       </arcgis-map>
     </calcite-shell>
 

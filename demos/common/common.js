@@ -12,11 +12,11 @@ class Common {
     this.dialog = document.getElementById("dialog");
     this.toggleDialogNode = document.getElementById("toggleDialog");
     this.toggleLayoutNode = document.getElementById("toggleLayoutNode");
-    this.isMapCentric = window.location.href.includes("/map-centric");
     this.setupUI();
   }
 
   initialize() {
+    this.isMapCentric = window.location.href.includes("/map-centric");
     this.createAndInsertElement(dialogHtml);
     this.createAndInsertElement(sheetHtml);
     this.createAndInsertElement(navHtml, true);
@@ -29,6 +29,11 @@ class Common {
     const shell = document.querySelector("calcite-shell");
     if (isNav) {
       shell?.prepend(element);
+
+      const navLogo = element.querySelector("calcite-navigation-logo");
+      navLogo.description = this.isMapCentric
+        ? "Map Centric"
+        : "Non Map Centric";
     } else {
       document.body.insertBefore(element, shell?.nextSibling);
     }
@@ -119,6 +124,7 @@ class Common {
       chartElement.view = view;
       chartElement.layer = layer;
       chartElement.model = loadedLayer.charts[index];
+      chartElement.enableResponsiveFeatures = true;
       loadedLayer.charts[index].title.visible = false;
       loadedLayer.charts[index].legend.visible = false;
     });

@@ -3,3 +3,27 @@ arcgis-chart {
   width: 550px;
   height: 200px;
 }
+
+@media (max-width: 813px) {
+  .chart-container,
+  arcgis-chart {
+    width: auto;
+    height: auto;
+  }
+
+  .chart-container {
+    height: 225px;
+  }
+
+  calcite-carousel-item[selected] {
+    width: 100%;
+  }
+
+  .esri-expand__panel {
+    height: 50vh;
+  }
+
+  .esri-expand__sheet .esri-expand__panel .esri-expand__panel-content {
+    overflow: visible;
+  }
+}
